@@ -32,13 +32,15 @@ Please list two areas of the assignment you'd like to **discuss further with you
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/link/to/your/gif/file.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='https://i.imgur.com/smnUpAc.gifv' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 
 ## Notes
 
 Describe any challenges encountered while building the app.
+
+The main challenge I encountered building this app was recieving an "Unknown Class PhotoCell" and a "Not a key-value coding compliant" error. This prevented the app from being built. Two TAs could not figure out even though all of my code and outlets matched. In the end, we just deleted PhotoCell and the imageViews and started from scratch. Thankfully, it worked! It's strange and we are still unsure what happened in XCode that made this happen.
 
 ## License
 
