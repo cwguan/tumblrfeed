@@ -58,7 +58,7 @@ The main challenge I encountered building this app was recieving an "Unknown Cla
     See the License for the specific language governing permissions and
     limitations under the License.
 
-# Lab 2 - *Name of App Here*
+# Lab 2 - TumblrFeed
 
 TumblrFeed is a photo browsing app app using the [The Tumblr API](https://www.tumblr.com/docs/en/api/v2#posts).
 
