@@ -10,12 +10,27 @@ import UIKit
 
 class PhotoDetailsViewController: UIViewController {
     
-    var photoURL: String = ""
-
+    var post: [String:Any]?
+    @IBOutlet weak var photoImageView: UIImageView!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        // Uses passed in post to be able to display photo in DetailView
+        if let post = post {
+            if let photos = post["photos"] as? [[ String: Any]] {
+                // Photos is NOT nil, so we can use it!
+                // Get image url
+                let photo = photos[0]
+                let originalSize = photo["original_size"] as! [String: Any]
+                let urlString = originalSize["url"] as! String
+                let url = URL(string: urlString)
+                
+                // Set the image view
+                photoImageView.af_setImage(withURL: url!)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {

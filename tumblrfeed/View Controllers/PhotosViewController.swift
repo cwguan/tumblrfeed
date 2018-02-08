@@ -56,6 +56,25 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         return CGFloat(280)
     }
     
+    
+    // Function for navigation for the detailsView
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        
+        if let indexPath = tableView.indexPath(for: cell) {
+            let post = posts[indexPath.row]
+            let vc = segue.destination as! PhotoDetailsViewController
+            vc.post = post
+        }
+        
+    }
+    
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
