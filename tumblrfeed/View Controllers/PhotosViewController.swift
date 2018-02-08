@@ -36,7 +36,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 print(error.localizedDescription)
             } else if let data = data,
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                print(dataDictionary)
+                // print(dataDictionary)
                 
                 // TODO: Get the posts and store in posts property
                 // Get the dictionary from the response key
@@ -50,6 +50,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         }
         task.resume()
     }
+    
     
     // Fixes each cells' height
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat{
@@ -70,14 +71,16 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
     }
     
     
-    
+    // Removes gray selection effect
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return posts.count
     }
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PhotoCell", for: indexPath) as! PhotoCell
@@ -98,6 +101,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         return cell
     }
 
+    
     // Makes a network request to get updated data
     // Updates the tableView with the new data
     // Hides the RefreshControl
@@ -110,7 +114,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
                 print(error.localizedDescription)
             } else if let data = data,
                 let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-                print(dataDictionary)
+                // print(dataDictionary)
                 
                 // TODO: Get the posts and store in posts property
                 // Get the dictionary from the response key
@@ -127,6 +131,7 @@ class PhotosViewController: UIViewController, UITableViewDataSource, UITableView
         }
         task.resume()
     }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
